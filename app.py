@@ -61,7 +61,7 @@ def webcam_stream(infer):
 def main():
     st.set_page_config(page_title="Automated Pothole Severity Classification", page_icon=":guardsman:", layout="wide")
     st.sidebar.title("Select an option")
-    app_mode = st.sidebar.selectbox("Choose Source", ["Load Image", "Load Video", "Webcam Stream"])
+    app_mode = st.sidebar.selectbox("Choose Source", ["Load Image", "Load Video", "Local Webcam Stream"])
     infer = V5(conf_thres=.2, iou_thres=.2)
     if app_mode == "Load Image":
         load_image(infer)
