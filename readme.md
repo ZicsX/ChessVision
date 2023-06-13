@@ -1,26 +1,2 @@
-# Visual Pollution Detection
-
-This project is about Pothole severity classification via computer vision. We have used object detection algorithms to detect different types of Pothole and classify them. The algorithm is trained using various datasets and converted into onnx format for faster computation.
-
-The following libraries are required to run the project:
-
-- Torch
-- Opencv
-- Streamlit
-- ONNX Runtime
-
-## Installation
-
-The project is written in Python and can be installed using the following command:
-
-```bash
-python  -m venv env
-env/Scripts/activate
-pip install -r .\requirements.txt
-```
-
-To run the web app use the following command:
-
-```bash
-streamlit run app.py
-``
+# Chess Piece Object Detection
+This project focuses on training a deep learning model for object detection of chess pieces. The goal is to accurately detect and classify different chess pieces in images.
