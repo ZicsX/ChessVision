@@ -11,11 +11,11 @@ class V5:
         self.conf_thres=conf_thres
         self.iou_thres =iou_thres
         self.img_size=img_size
-        self.name= names= ['D00', 'D00rotation', 'D01', 'D10', 'D10rotation', 'D11', 'D20', 'D20rotation', 'D40', 'D40rotation', 'D43', 'D44', 'D50', 'Repair']
+        self.name= ['black bishop', 'black king', 'black knight', 'black pawn', 'black queen', 'black rook', 'white bishop', 'white king', 'white knight', 'white pawn', 'white queen', 'white rook']
 
         # Initialize ONNXRuntime session   
         self.providers = ['CUDAExecutionProvider', 'CPUExecutionProvider'] if ort.get_device()=='GPU' else ['CPUExecutionProvider']
-        self.session = ort.InferenceSession('models/theme2.1.onnx', providers=self.providers)# self.cuda= cuda
+        self.session = ort.InferenceSession('models/best.onnx', providers=self.providers)# self.cuda= cuda
 
     def __call__(self,image_or):
         #image preprocessing

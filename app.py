@@ -7,7 +7,7 @@ import numpy as np
 import tempfile
 
 def load_image(infer):
-    st.title("Pothole severity classification via computer vision")
+    st.title("Chess Piece Object Detection via computer vision")
     file = st.file_uploader("Upload an image", type=["jpg"])
     col1, col2 = st.columns(2)
 
@@ -15,7 +15,7 @@ def load_image(infer):
         file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
         image = cv2.imdecode(file_bytes, 1)
         col1.image(image, channels="BGR", caption="Original Image", use_column_width=True)
-        if st.button("Detect Potholes"):
+        if st.button("Detect Piece"):
             detect = infer(image)
             col2.image(detect, channels="BGR", caption="Detected Image", use_column_width=True)
 
@@ -59,7 +59,7 @@ def webcam_stream(infer):
 
 
 def main():
-    st.set_page_config(page_title="Automated Pothole Severity Classification", page_icon=":guardsman:", layout="wide")
+    st.set_page_config(page_title="Automated Chess Piece Object Detection", page_icon=":guardsman:", layout="wide")
     st.sidebar.title("Select an option")
     app_mode = st.sidebar.selectbox("Choose Source", ["Load Image", "Load Video", "Local Webcam Stream"])
     infer = V5(conf_thres=.2, iou_thres=.2)
